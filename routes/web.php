@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('books', 'Api\BookController@getAllBooks');
+Route::get('books/{id}', 'Api\BookController@getBook');
+Route::post('books', 'Api\BookController@createBook');
+Route::put('books/{id}', 'Api\BookController@updateBook');
+Route::delete('books/{id}','Api\BookController@deleteBook');
